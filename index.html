@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="PMUlogo2-removebg-preview.png" type="image/png">
+<title>PMU - Paloma Conrado</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f6f2ec;
+color:#2e2a26;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+color: #856943;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+/* HERO NOVO */
+.hero{
+height:100vh;
+background:url('#') no-repeat center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:#d1b8728e;
+}
+
+.hero-content{
+position:relative;
+text-align:center;
+max-width:700px;
+}
+
+.hero h1{
+font-size:56px;
+margin-bottom:20px;
+color:#75471b;
+}
+
+.hero p{
+margin-bottom:30px;
+color:#fff;
+background-color: #8b6035;
+border-radius:50px;
+padding: 5px 10px;
+max-width: 400px;
+margin: 0 auto 30px;
+}
+    
+
+.btn{
+padding:14px 32px;
+background:#2e2a26;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+}
+
+/* SEÇÃO VISUAL */
+.visual{
+padding:100px 0;
+}
+
+.visual-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.visual img{
+width: 100%;
+border-radius:20px;
+}
+
+.visual-text h2{
+font-size:38px;
+margin-bottom:20px;
+}
+
+/* GALERIA */
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:100px 0;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:16px;
+}
+
+/* CTA FINAL */
+.cta{
+text-align:center;
+padding:100px 20px;
+}
+
+.cta h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+.visual-grid{
+grid-template-columns:1fr;
+}
+.gallery{
+grid-template-columns:1fr;
+}
+.hero h1{
+font-size:36px;
+}
+}
+
+footer{
+margin-top:60px;
+padding:70px 0 30px;
+background:
+radial-gradient(circle at top center, rgba(203,183,155,.18), transparent 35%),
+linear-gradient(180deg, rgba(246,242,236,.95), rgba(233,223,210,1));
+border-top:1px solid rgba(0,0,0,.06);
+}
+
+.footer-social-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.footer-social-title h3{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.footer-social-title p{
+color:#8a7f75;
+}
+
+/* SOCIAL */
+.social-list{
+display:flex;
+flex-direction:column;
+gap:20px;
+max-width:700px;
+margin:0 auto;
+}
+
+.social-card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 28px;
+border-radius:22px;
+background:rgba(255,255,255,.6);
+border:1px solid rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.social-card:hover{
+transform:translateY(-4px);
+}
+
+/* ICON PADRÃO */
+.social-left{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.social-left i{
+font-size:1.6rem;
+background:linear-gradient(135deg,#cbb79b,#b39e80);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+transition:.3s;
+}
+
+/* BOTÃO */
+.social-card a{
+padding:12px 20px;
+border-radius:999px;
+background:linear-gradient(135deg,#cbb79b,#b39e80);
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HOVER INTELIGENTE FINAL */
+.social-card.whatsapp:hover{ border-color:#25D366; }
+.social-card.whatsapp:hover i{ -webkit-text-fill-color:#25D366; background:none; }
+
+.social-card.instagram:hover{ border-color:#E1306C; }
+.social-card.instagram:hover i{ -webkit-text-fill-color:#E1306C; background:none; }
+
+.social-card.tiktok:hover{ border-color:#257ac9; }
+.social-card.tiktok:hover i{ -webkit-text-fill-color:#257ac9; background:none; }
+
+.social-card.discord:hover{ border-color:#0f12c9; }
+.social-card.discord:hover i{ -webkit-text-fill-color:#0f12c9; background:none; }
+
+.social-card.youtube:hover{ border-color:#e40e0e; }
+.social-card.youtube:hover i{ -webkit-text-fill-color:#e40e0e; background:none; }
+
+/* FOOTER BOTTOM */
+.footer-bottom{
+margin-top:50px;
+padding-top:25px;
+border-top:1px solid rgba(0,0,0,.06);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+color:#8a7f75;
+}
+
+.footer-bottom a{
+background:linear-gradient(90deg,#cbb79b,#d6c3a3,#b39e80);
+-webkit-background-clip:text;
+-webkit-text-fill-color:#856943;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.footer-bottom a:hover{
+filter:brightness(1.5);
+}
+
+/* RESPONSIVO */
+@media(max-width:980px){
+.hero-wrap,
+.cards{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:768px){
+.social-card{
+flex-direction:column;
+gap:20px;
+text-align:center;
+}
+.social-left{
+flex-direction:column;
+}
+.footer-bottom{
+flex-direction:column;
+text-align:center;
+}
+
+/* ASSINATURA DO FUNDADOR */
+.footer-signature span a{
+background:linear-gradient(90deg,#cbb79b,#d6c3a3,#b39e80);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+/* no hover, troca o GRADIENTE (não usa filter) */
+.footer-signature span a:hover{
+background:linear-gradient(90deg,#a68f6d,#8f7a5c,#7a654d);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+letter-spacing:.5px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO IMPACTO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Sobrancelhas que equilibram o rosto</h1>
+    <p>O detalhe certo muda tudo.</p>
+    <a href="contato.html" class="btn">Agendar horário: EXEMPLO</a>
+  </div>
+</section>
+
+<!-- BLOCO VISUAL 1 -->
+<section class="visual container">
+  <div class="visual-grid">
+    <img src="PalomaFOTO.jpg">
+    <div class="visual-text">
+      <h2>Paloma Conrado</h2>
+      <p>Descrição profissional</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO VISUAL 2 -->
+<section class="visual container">
+  <div class="visual-grid">
+    <div class="visual-text">
+      <h2>Esboço - exemplo</h2>
+      <p>Descrição do serviço</p>
+    </div>
+    <img src="PMUsobrancelha.jpg">
+  </div>
+</section>
+
+<!-- GALERIA FORTE -->
+<section class="container">
+  <div class="gallery">
+    <img src="PMUsobrancelha2.jpg">
+    <img src="PMUsobrancelha3.jpg">
+    <img src="PMUsobrancelha4.jpg">
+    <img src="PMUsobrancelha5.jpg">
+    <img src="PMUsobrancelha6.jpg">
+    <img src="PMUsobrancelha7.jpg">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Agenda limitada</h2>
+  <a href="contato.html" class="btn">Chamar no WhatsApp</a>
+</section>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-social-title">
+      <h3>Entre em contato conosco!</h3>
+      <p>E fique por dentro de todas as novidades.</p>
+    </div>
+
+    <div class="social-list">
+
+      <!-- WHATSAPP -->
+      <div class="social-card whatsapp">
+        <div class="social-left">
+          <i class="fab fa-whatsapp"></i>
+          <div class="social-info">
+            <h4>WhatsApp</h4>
+            <p>Agende seu horário</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5511912345678?text=Olá,%20Gostaria%20de%20conhecer%20seus%20serviços" target="_blank">Conversar</a>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="social-card instagram">
+        <div class="social-left">
+          <i class="fab fa-instagram"></i>
+          <div class="social-info">
+            <h4>Instagram</h4>
+            <p>Fique por dentro de todas as novidades</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/palomaconrado.pmu/" target="_blank">Acessar</a>
+      </div>
+
+      <!-- TIKTOK -->
+      <div class="social-card tiktok">
+        <div class="social-left">
+          <i class="fab fa-tiktok"></i>
+          <div class="social-info">
+            <h4>TikTok</h4>
+            <p>Conteúdo rápido e divertido</p>
+          </div>
+        </div>
+        <a href="https://www.tiktok.com/@agencynexaenterprises" target="_blank">Acessar</a>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="social-card youtube">
+        <div class="social-left">
+          <i class="fab fa-youtube"></i>
+          <div class="social-info">
+            <h4>YouTube</h4>
+            <p>Aulas - Curso e dicas diretamente comigo!</p>
+          </div>
+        </div>
+        <a href="https://www.youtube.com/channel/UCBvGm-pfP3e_h4zDxUQ309Q" target="_blank">Acessar</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Paloma Conrado PMU - Todos os direitos reservados.</p>
+     <p class="footer-signature">
+  Criado por
+  <span>
+    <a href="https://contatoceonexaenterprises.carrd.co/">Vinícios Santana</a>
+  </span>
+</p>
+
+  </div>
+</footer>
+
+</body>
+</html>
