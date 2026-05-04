@@ -20,35 +20,57 @@ color:#2e2a26;
 
 h1,h2{
 font-family:'Playfair Display',serif;
-color: #856943;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-/* HERO NOVO */
+/* HEADER + HERO LIMPO */
 .hero{
 height:100vh;
-background:url('#') no-repeat center/cover;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
+align-items:center;
+text-align:center;
 position:relative;
+background:url('#') center/cover no-repeat;
 }
 
 .hero::after{
 content:'';
 position:absolute;
 inset:0;
-background:#d1b8728e;
+background:rgba(209,184,114,.55);
 }
 
+.top-header{
+position:fixed; /* aqui está o segredo */
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+z-index:999;
+background:rgba(246,242,236,0.85); /* leve fundo pra não sumir */
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.top-header img{
+height:50px;
+}
+
+.top-header nav a{
+margin-left:25px;
+text-decoration:none;
+color:#6b625a;
+font-size:14px;
+}
+
+/* CONTEÚDO HERO */
 .hero-content{
 position:relative;
-text-align:center;
+z-index:2;
 max-width:700px;
 }
 
@@ -59,17 +81,16 @@ color:#75471b;
 }
 
 .hero p{
-margin-bottom:30px;
+background:#8b6035;
 color:#fff;
-background-color: #8b6035;
+padding:8px 16px;
 border-radius:50px;
-padding: 5px 10px;
-max-width: 400px;
-margin: 0 auto 30px;
+margin-bottom:25px;
+display:inline-block;
 }
-    
 
 .btn{
+display:inline-block;
 padding:14px 32px;
 background:#2e2a26;
 color:#fff;
@@ -77,26 +98,23 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* SEÇÃO VISUAL */
-.visual{
-padding:100px 0;
+/* SEÇÕES */
+.section{
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
 }
 
-.visual-grid{
+.grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:center;
 }
 
-.visual img{
-width: 100%;
+.grid img{
+width:100%;
 border-radius:20px;
-}
-
-.visual-text h2{
-font-size:38px;
-margin-bottom:20px;
 }
 
 /* GALERIA */
@@ -104,30 +122,24 @@ margin-bottom:20px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
-padding:100px 0;
 }
 
 .gallery img{
 width:100%;
-height:320px;
+height:300px;
 object-fit:cover;
 border-radius:16px;
 }
 
-/* CTA FINAL */
+/* CTA */
 .cta{
 text-align:center;
 padding:100px 20px;
 }
 
-.cta h2{
-font-size:36px;
-margin-bottom:20px;
-}
-
 /* RESPONSIVO */
 @media(max-width:768px){
-.visual-grid{
+.grid{
 grid-template-columns:1fr;
 }
 .gallery{
@@ -296,30 +308,40 @@ letter-spacing:.5px;
 
 <body>
 
-<!-- HERO IMPACTO -->
-<section class="hero">
+<header class="hero">
+
+  <div class="top-header">
+    <img src="PMUlogo2-removebg-preview.png">
+    <nav>
+      <a href="index copy.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+
   <div class="hero-content">
     <h1>Sobrancelhas que equilibram o rosto</h1>
     <p>O detalhe certo muda tudo.</p>
-    <a href="contato.html" class="btn">Agendar horário: EXEMPLO</a>
+    <a href="contato.html" class="btn">Agendar horário</a>
   </div>
-</section>
 
-<!-- BLOCO VISUAL 1 -->
-<section class="visual container">
-  <div class="visual-grid">
+</header>
+
+<!-- BLOCO 1 -->
+<section class="section">
+  <div class="grid">
     <img src="PalomaFOTO.jpg">
-    <div class="visual-text">
+    <div>
       <h2>Paloma Conrado</h2>
       <p>Descrição profissional</p>
     </div>
   </div>
 </section>
 
-<!-- BLOCO VISUAL 2 -->
-<section class="visual container">
-  <div class="visual-grid">
-    <div class="visual-text">
+<!-- BLOCO 2 -->
+<section class="section">
+  <div class="grid">
+    <div>
       <h2>Esboço - exemplo</h2>
       <p>Descrição do serviço</p>
     </div>
@@ -327,8 +349,8 @@ letter-spacing:.5px;
   </div>
 </section>
 
-<!-- GALERIA FORTE -->
-<section class="container">
+<!-- GALERIA -->
+<section class="section">
   <div class="gallery">
     <img src="PMUsobrancelha2.jpg">
     <img src="PMUsobrancelha3.jpg">
@@ -345,6 +367,7 @@ letter-spacing:.5px;
   <a href="contato.html" class="btn">Chamar no WhatsApp</a>
 </section>
 
+<!-- FOOTER ORIGINAL (mantido) -->
 <footer>
   <div class="container">
 
